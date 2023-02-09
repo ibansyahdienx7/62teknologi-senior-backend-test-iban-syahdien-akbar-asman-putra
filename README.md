@@ -44,7 +44,7 @@ I can handle working with different types of people to create new experiences an
 - How to migrate session table `php artisan session:table`
 - After the migrate is successful, run the program by `"php artisan serve"` you can customize the port on your php artisan serve, like the example in `.env.example`. The file is listed as `http://127.0.0.1:8000`, for `8000` is a port where the default port of php artisan is port `8000`.
 - If you want to change the port as above or you want to customize it to your liking, do it in the following way: `php artisan serve --port={according to your wishes}`
-Example: `php artisan serve --port=8001`
+Example: `php artisan serve --port=8000`
 - If you have done a custom port on php artisan things you should pay attention to in the .env file and the config/app file.
 In the .env file change it to a url with your custom port, for example: `"APP_URL=http://127.0.0.1:8000"`
 And in the config/app file, change it with the following example: `'url' => env('APP_URL', 'http://127.0.0.1:8000')`
