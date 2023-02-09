@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', '62Teknologi'),
 
     /*
     |--------------------------------------------------------------------------
@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'env' => env('APP_ENV', 'production'),
+    'env' => env('APP_ENV', 'development'),
 
     /*
     |--------------------------------------------------------------------------
@@ -71,7 +71,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Jakarta',
 
     /*
     |--------------------------------------------------------------------------
@@ -155,6 +155,12 @@ return [
     | this array to grant expanded functionality to your applications.
     |
     */
+
+    'author_developer'  => 'Ibansyah',
+    'ig_developer'      => 'https://www.instagram.com/ibansyah_/',
+
+    'brand' => '62 Teknologi',
+    'logo' => '62teknologi.jpg',
 
     'providers' => [
 

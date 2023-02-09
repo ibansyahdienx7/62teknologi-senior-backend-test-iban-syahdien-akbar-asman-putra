@@ -16,21 +16,21 @@ use Stichoza\GoogleTranslate\GoogleTranslate;
 
 trait MyHelper
 {
-
-    function singkat_price($n, $presisi=1) {
+    function singkat_price($n, $presisi = 1)
+    {
         if ($n < 900) {
             $format_angka = number_format($n, $presisi,);
             $simbol = '';
         } else if ($n < 900000) {
             $format_angka = number_format($n / 1000, $presisi);
-            if(str_replace('_', '-', app()->getLocale()) == 'id'){
+            if (str_replace('_', '-', app()->getLocale()) == 'id') {
                 $simbol = 'Rb';
             } else {
                 $simbol = 'K';
             }
         } else if ($n < 900000000) {
             $format_angka = number_format($n / 1000000, $presisi);
-            if(str_replace('_', '-', app()->getLocale()) == 'id'){
+            if (str_replace('_', '-', app()->getLocale()) == 'id') {
                 $simbol = 'Jt';
             } else {
                 $simbol = 'M';
@@ -43,9 +43,9 @@ trait MyHelper
             $simbol = 'T';
         }
 
-        if ( $presisi > 0 ) {
-            $pisah = '.' . str_repeat( '0', $presisi );
-            $format_angka = str_replace( $pisah, '', $format_angka );
+        if ($presisi > 0) {
+            $pisah = '.' . str_repeat('0', $presisi);
+            $format_angka = str_replace($pisah, '', $format_angka);
         }
 
         return $format_angka . ' ' . $simbol;
@@ -68,46 +68,6 @@ trait MyHelper
         }
 
         return $output;
-    }
-
-    public function getBankFullName($bank_code)
-    {
-        switch ($bank_code) {
-            case 'BMRI':
-                $nama_bank = 'Bank Mandiri';
-                break;
-            case 'IBBK':
-                $nama_bank = 'Bank International Indonesia Maybank';
-                break;
-            case 'BBBA':
-                $nama_bank = 'Bank Permata';
-                break;
-            case 'BBBB':
-                $nama_bank = 'Bank Permata Syariah';
-                break;
-            case 'BRIN':
-                $nama_bank = 'Bank Rakyat Indonesia';
-                break;
-            case 'CENA':
-                $nama_bank = 'Bank Central Asia';
-                break;
-            case 'BNIN':
-                $nama_bank = 'Bank Negara Indonesia';
-                break;
-            case 'HNBN':
-                $nama_bank = 'Bank KEB Hana Indonesia';
-                break;
-            case 'BNIA':
-                $nama_bank = 'Bank CIMB Niaga, TBK.';
-                break;
-            case 'BDIN':
-                $nama_bank = 'Bank Danamon Indonesia, TBK.';
-                break;
-            default:
-                $nama_bank = 'Bank';
-        }
-
-        return $nama_bank;
     }
 
     public function hpFormat($nohps)
@@ -237,8 +197,7 @@ trait MyHelper
 
     function mataUang()
     {
-        if(str_replace('_', '-', app()->getLocale()) == 'id')
-        {
+        if (str_replace('_', '-', app()->getLocale()) == 'id') {
             $mata_uang = 'Rp ';
         } else {
             $mata_uang = 'IDR ';
@@ -249,8 +208,7 @@ trait MyHelper
 
     static function mataUangs()
     {
-        if(str_replace('_', '-', app()->getLocale()) == 'id')
-        {
+        if (str_replace('_', '-', app()->getLocale()) == 'id') {
             $mata_uang = 'Rp ';
         } else {
             $mata_uang = 'IDR ';
@@ -275,7 +233,7 @@ trait MyHelper
 
         if ($seconds <= 60) {
 
-            if(str_replace('_', '-', app()->getLocale()) == 'id') :
+            if (str_replace('_', '-', app()->getLocale()) == 'id') :
                 $sekarang = 'Sekarang';
             else :
                 $sekarang = $translate->setTarget('en')->translate('Sekarang');
@@ -284,7 +242,7 @@ trait MyHelper
             return $sekarang;
         } else if ($minutes <= 60) {
 
-            if(str_replace('_', '-', app()->getLocale()) == 'id') :
+            if (str_replace('_', '-', app()->getLocale()) == 'id') :
                 $menit = 'Menit lalu';
             else :
                 $menit = $translate->setTarget('en')->translate('Menit lalu');
@@ -297,7 +255,7 @@ trait MyHelper
             }
         } else if ($hours <= 24) {
 
-            if(str_replace('_', '-', app()->getLocale()) == 'id') :
+            if (str_replace('_', '-', app()->getLocale()) == 'id') :
                 $jam = 'Jam lalu';
             else :
                 $jam = $translate->setTarget('en')->translate('Jam lalu');
@@ -310,7 +268,7 @@ trait MyHelper
             }
         } else if ($days <= 7) {
 
-            if(str_replace('_', '-', app()->getLocale()) == 'id') :
+            if (str_replace('_', '-', app()->getLocale()) == 'id') :
                 $Kemarin = 'Kemarin';
                 $hariLalu = 'Hari lalu';
             else :
@@ -325,7 +283,7 @@ trait MyHelper
             }
         } else if ($weeks <= 4.3) {  //4.3 == 52/12
 
-            if(str_replace('_', '-', app()->getLocale()) == 'id') :
+            if (str_replace('_', '-', app()->getLocale()) == 'id') :
                 $mingguLalu = 'Minggu lalu';
             else :
                 $mingguLalu = $translate->setTarget('en')->translate('Minggu lalu');
@@ -338,7 +296,7 @@ trait MyHelper
             }
         } else if ($months <= 12) {
 
-            if(str_replace('_', '-', app()->getLocale()) == 'id') :
+            if (str_replace('_', '-', app()->getLocale()) == 'id') :
                 $bulanLalu = 'Bulan lalu';
             else :
                 $bulanLalu = $translate->setTarget('en')->translate('Bulan lalu');
@@ -351,7 +309,7 @@ trait MyHelper
             }
         } else {
 
-            if(str_replace('_', '-', app()->getLocale()) == 'id') :
+            if (str_replace('_', '-', app()->getLocale()) == 'id') :
                 $tahunLalu = 'Tahun lalu';
             else :
                 $tahunLalu = $translate->setTarget('en')->translate('Tahun lalu');
@@ -383,12 +341,6 @@ trait MyHelper
         $ip = ip_user();
         $array = $ip;
         return $array;
-    }
-
-    public function KodeBooking()
-    {
-        $kode = 'WDSR-' . $this->randomNumber();
-        return $kode;
     }
 
     public function randomNumber()
@@ -511,40 +463,40 @@ trait MyHelper
 
     public static function days_id()
     {
-        $hari = date ("D");
+        $hari = date("D");
 
-        switch($hari){
+        switch ($hari) {
             case 'Sun':
                 $hari_ini = "Minggu";
-            break;
+                break;
 
             case 'Mon':
                 $hari_ini = "Senin";
-            break;
+                break;
 
             case 'Tue':
                 $hari_ini = "Selasa";
-            break;
+                break;
 
             case 'Wed':
                 $hari_ini = "Rabu";
-            break;
+                break;
 
             case 'Thu':
                 $hari_ini = "Kamis";
-            break;
+                break;
 
             case 'Fri':
                 $hari_ini = "Jumat";
-            break;
+                break;
 
             case 'Sat':
                 $hari_ini = "Sabtu";
-            break;
+                break;
 
             default:
                 $hari_ini = "Tidak di ketahui";
-            break;
+                break;
         }
 
         return $hari_ini;

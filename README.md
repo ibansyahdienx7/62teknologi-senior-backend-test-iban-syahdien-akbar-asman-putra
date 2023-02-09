@@ -54,6 +54,10 @@ And in the config/app file, change it with the following example: `'url' => env(
 - After that, check one of the end points in postman, like the following example: `http://127.0.0.1:8000/v1/{end-point}`
 - Then the program is successfully executed, the success/failure response will be listed below in the postman
 - That's all the way to run this project, if you have trouble, please contact email: `ibansyahdienx7@gmail.com`
+
+## TESTING 
+- [Postman](https://documenter.getpostman.com/view/25222741/2s935sn29V).
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
